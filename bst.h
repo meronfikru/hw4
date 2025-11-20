@@ -560,11 +560,11 @@ Node<Key, Value>* BinarySearchTree<Key, Value>::internalFind(const Key& key) con
     // TODO
     Node<Key, Value>* temp = root_;
     while (temp!=NULL){
-        if (temp->key != key){
-            if (temp->key< key){
-                temp= temp->right_;
+        if (temp->getKey() != key){
+            if (temp->getKey()< key){
+                temp= temp->getLeft();
             }else{
-                temp=temp->left_;
+                temp=temp->getRight();
             }
         }else{
             return temp;
